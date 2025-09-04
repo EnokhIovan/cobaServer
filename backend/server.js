@@ -8,14 +8,14 @@ app.use('/scripts', express.static(path.join(__dirname, '../frontend/scripts')))
 app.use('/styles', express.static(path.join(__dirname, '../frontend/styles')));
 
 app.get('/', (req, res) => {
-    res.redirect('/login');
+    res.redirect('/home/tugas');
 })
 
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/pages/login.html"));
 })
 
-app.get('/tugas', (req, res) => {
+app.get('/home/tugas', (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/pages/tugas.html"));
 })
 

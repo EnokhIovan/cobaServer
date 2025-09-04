@@ -1,37 +1,86 @@
-.note_list_container {
-    margin: 12px 12px;
-    padding: 0px;
-    font-size: 120%;
+body > header {
+    margin: 0;
+    width: 100%;
+    background-color: #40404a;
+}
+.head_title > li {
+    font-size: 250%;
+    text-transform: uppercase;
     font-weight: bold;
 }
-.note_list_container > li {
-    margin: 16px 0;
-    width: 100%;
-}
-.note_list_container > li > h1 {
-    padding: 12px;
-    background-color: #35356f;
-    border-top-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    border: 2px solid transparent;
-    text-transform: uppercase;
+.ul_hoverable > li:not(.arrow):not(.current_position){
     cursor: pointer;
 }
-.list_content_container {
-    box-sizing: border-box;
-    padding: 8px 0;
+header > .navigator_list {
+    display: flex;
+}
+.navigator_list li {
+    margin: 0 8px;
+    /* background-color: red; */
+}
+.cathegory_list {
+    padding: 8px;
+}
+.cathegory_list .cathegory_name{
+    padding: 8px;
+    background-color: #30307f;
+}
+.cathegory_list li:not(:first-child){
+    margin-top: 16px;
+}
+.cathegory_list h1 {
+    /* font-size: 200%; */
+    cursor: pointer;
+}
+.cathegory_list .matkul_list {
+    background-color: #7f7f20;
+    /* height: 0; */
+    max-height: 0;
+    overflow: hidden;
+    overflow: auto;
+    transition: max-height 0.2s ease-out;
+}
+.matkul_list.active {
+    max-height: 400px;
+    transition: max-height 0.4s ease-out;
+}
+.matkul_list .matkul_wrapper {
+    padding: 8px;
+}
+.matkul_wrapper .matkul {
     width: 100%;
-    background-color: #6f6f35;
-    border-bottom-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-collapse: collapse;
 }
-.list_content {
-    font-size: 100%;
+.matkul_wrapper .matkul:not(:first-child) {
+    margin-top: 4px;
 }
-.list_content li::marker {
-    font-size: 125%;
+.matkul .matkul_header {
+    background-color: #40408f;
+    cursor: pointer;
 }
-.matkul_detail li {
-    margin: 0 0 4px 0;
-    font-weight: normal;
+.matkul_header .matkul_header_number {
+    width: 50px;
+}
+.matkul_header .matkul_header_name {
+    width: 60%;
+}
+.matkul .matkul_content {
+    visibility: collapse;
+}
+.matkul_content td{
+    padding: 8px;
+    background-color: #55557f;
+}
+.matkul_content h3:not(:first-child) {
+    margin-top: 8px;
+}
+.matkul_content td:first-child {
+    border-right: 2px solid white;
+}
+.matkul_content.active {
+    visibility: visible;
+}
+td, th {
+    padding: 4px;
+    border: 2px solid transparent;
 }
