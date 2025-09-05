@@ -14,10 +14,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 ul {
     margin: 0;
-    padding: 8px 16px;
+    padding: 0 8px;
     list-style-type: none;
 }
 ul li {
+    padding: 8px 4px;
     user-select: none;
     font-size: 125%;
 }

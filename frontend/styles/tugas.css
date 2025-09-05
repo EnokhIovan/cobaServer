@@ -4,19 +4,25 @@ body > header {
     background-color: #40404a;
 }
 .head_title > li {
-    font-size: 250%;
+    /* font-size: 250%; */
+    font-size: clamp(100%, 200%, 4vw);
     text-transform: uppercase;
     font-weight: bold;
 }
 .ul_hoverable > li:not(.arrow):not(.current_position){
     cursor: pointer;
 }
+.ul_hoverable > li.current_position{
+    background-color: #303035;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
 header > .navigator_list {
+    padding-top: 8px;
     display: flex;
 }
 .navigator_list li {
-    margin: 0 8px;
-    /* background-color: red; */
+    margin-right: 6px;
 }
 .cathegory_list {
     padding: 8px;
@@ -24,24 +30,20 @@ header > .navigator_list {
 .cathegory_list .cathegory_name{
     padding: 8px;
     background-color: #30307f;
-}
-.cathegory_list li:not(:first-child){
-    margin-top: 16px;
+    font-size: clamp(0px, 8vw, 40px);
 }
 .cathegory_list h1 {
-    /* font-size: 200%; */
     cursor: pointer;
 }
 .cathegory_list .matkul_list {
     background-color: #7f7f20;
-    /* height: 0; */
     max-height: 0;
     overflow: hidden;
     overflow: auto;
     transition: max-height 0.2s ease-out;
 }
 .matkul_list.active {
-    max-height: 400px;
+    max-height: clamp(0px, 50vh, 400px);
     transition: max-height 0.4s ease-out;
 }
 .matkul_list .matkul_list_wrapper {
@@ -50,6 +52,7 @@ header > .navigator_list {
 .matkul_list_wrapper .matkul {
     width: 100%;
     border-collapse: collapse;
+    font-size: clamp(50%, 4vw, 24px);
 }
 .matkul_list_wrapper .matkul:not(:first-child) {
     margin-top: 4px;
