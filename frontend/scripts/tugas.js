@@ -1,6 +1,6 @@
 const cathegoryName = document.querySelectorAll('.cathegory_name');
 const cathegoryListEl = document.querySelector('.cathegory_list');
-const matkulWrapper = document.querySelector('.matkul_wrapper');
+const matkulWrapper = document.querySelectorAll('.matkul_list_wrapper');
 const matkulHeader = document.querySelectorAll('.matkul_header');
 
 
@@ -16,9 +16,13 @@ const matkulHeader = document.querySelectorAll('.matkul_header');
 
 [...matkulHeader].forEach(matkul => {
     matkul.addEventListener('click', (e) => {
-        let matkulList = [...matkulWrapper.children];
-        let index = matkulList.indexOf(e.currentTarget.closest(".matkul"));
-        matkulList[index].querySelector('.matkul_content').classList.toggle('active');
+        let matkulWrapperList = [...matkulWrapper];
+        
+        let cathegoryIndex = matkulWrapperList.indexOf(e.currentTarget.closest(".matkul_list_wrapper"));
+        let matkulList = [...[...matkulWrapperList][cathegoryIndex].children];
+        let matkulIndex = matkulList.indexOf(e.currentTarget.closest('.matkul'));
+        console.log(matkulList)
+        matkulList[matkulIndex].querySelector('.matkul_content').classList.toggle('active');
     })
 })
 

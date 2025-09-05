@@ -44,14 +44,14 @@ header > .navigator_list {
     max-height: 400px;
     transition: max-height 0.4s ease-out;
 }
-.matkul_list .matkul_wrapper {
+.matkul_list .matkul_list_wrapper {
     padding: 8px;
 }
-.matkul_wrapper .matkul {
+.matkul_list_wrapper .matkul {
     width: 100%;
     border-collapse: collapse;
 }
-.matkul_wrapper .matkul:not(:first-child) {
+.matkul_list_wrapper .matkul:not(:first-child) {
     margin-top: 4px;
 }
 .matkul .matkul_header {
