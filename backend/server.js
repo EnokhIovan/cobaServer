@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 8080;
 
+app.use(express.json());
+
 app.use('/pages', express.static(path.join(__dirname, '../frontend/pages')));
 app.use('/scripts', express.static(path.join(__dirname, '../frontend/scripts')));
 app.use('/styles', express.static(path.join(__dirname, '../frontend/styles')));
@@ -13,6 +15,11 @@ app.get('/', (req, res) => {
 
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/pages/login.html"));
+})
+
+app.get('/API/matkul-data', (req, res) => {
+    const matkulData = require('./API/prototype.json');
+    res.json(matkulData);
 })
 
 app.get('/home/tugas', (req, res) => {
