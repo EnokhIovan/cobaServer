@@ -1,4 +1,4 @@
-body > header {
+header {
     margin: 0;
     width: 100%;
     background-color: #40404a;
@@ -41,7 +41,7 @@ header > .navigator_list {
 }
 .cathegory_list .matkul_list {
     background-color: #7f7f20;
-    max-height: 0;
+    /* max-height: 0; */
     overflow: hidden;
     overflow: auto;
     transition: max-height 0.2s ease-out;
@@ -81,7 +81,7 @@ header > .navigator_list {
     width: 5%;
 }
 .matkul .matkul_content {
-    visibility: collapse;
+    /* visibility: collapse; */
 }
 .matkul_content td{
     padding: 8px;
